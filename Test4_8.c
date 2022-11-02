@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <float.h>
+#define L 3.785
+#define km 1.609
 
 int main(void) {
 	//1.
@@ -65,14 +67,23 @@ int main(void) {
 	//printf("%-*d %-*d\n", len1, len1, len2, len2);
 
 	//7.
-	double num1 = 1.0 / 3.0;
-	float num2 = 1.0 / 3.0;
+	//double num1 = 1.0 / 3.0;
+	//float num2 = 1.0 / 3.0;
 
-	printf("%.6f, %.12f, %.16f\n", num1, num1, num1);
-	printf("%.6f, %.12f, %.16f\n", num2, num2, num2);
-	printf("%d %d", FLT_DIG, DBL_DIG);
+	//printf("%.6f, %.12f, %.16f\n", num1, num1, num1);
+	//printf("%.6f, %.12f, %.16f\n", num2, num2, num2);
+	//printf("%d %d", FLT_DIG, DBL_DIG);
 
 	//8.
+	float gallon;
+	float mile;
+
+	printf("请输入旅行的旅程（单位：英里）：\n");
+	scanf_s("%f", &mile);
+	printf("请输入此段旅行消耗的汽油量（单位：加仑）：\n");
+	scanf_s("%f", &gallon);
+	printf("每加仑汽油行驶了%.1f英里\n", mile / gallon);
+	printf("%.1f英里/加仑等于%0.1f升/100公里\n", mile / gallon, (gallon * L) / (mile * km));
 
 
 	return 0;
